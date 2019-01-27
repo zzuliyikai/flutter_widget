@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:fultter/MyListView.dart';
+import 'package:fultter/app_colors.dart';
+import 'package:fultter/home/home_screen.dart';
 
 void main() => runApp(MyApp());
 
@@ -19,16 +21,11 @@ class MyApp extends StatelessWidget {
 
     return MaterialApp(
         title: 'Flutter Demo',
-        theme: ThemeData(
-          primarySwatch: Colors.blue,
+        theme: ThemeData.light().copyWith(
+            primaryColor: Color(AppColors.appBarColor),
         ),
      //  home: DefaultTabController(length: 3, child: MyScaffold() ,)
-      home: Scaffold(
-        appBar: AppBar(
-          title: Text("listView"),
-        ),
-        body: new MyListView(),
-      ),
+      home: HomeScreen(),
     );
   }
 }
